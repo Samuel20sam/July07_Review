@@ -27,20 +27,17 @@ public class AddressBook {
         String phoneNumber = scanner.next();
         System.out.println("Enter the Email");
         String email = scanner.next();
-        //creating contacts object and passing arguments inside constructor
+
         Contacts list = new Contacts(fName, lName, address, city, state, zip, phoneNumber, email);
-        //adding list object into the linked list with Contact class data type
         addToFile(list);
         person.add(list);
-        //printing person array list
-        System.out.println(person);
-
+        System.out.println("Contact added is:" +person);
     }
 
-    private void addToFile(Contacts p){
+    private void addToFile(Contacts detail){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
-            writer.write(p.getFirstName() + "\r\n" + p.getLastName() + "\r\n" + p.getAddress() + "\r\n" + p.getCity() +
-                    "\r\n" + p.getState() + "\r\n" + p.getZip() + "\r\n" + p.getPhoneNumber() + "\r\n" + p.getEmail() + "\r\n\r\n");
+            writer.write(detail.getFirstName() + "\r\n" + detail.getLastName() + "\r\n" + detail.getAddress() + "\r\n" + detail.getCity() +
+                    "\r\n" + detail.getState() + "\r\n" + detail.getZip() + "\r\n" + detail.getPhoneNumber() + "\r\n" + detail.getEmail() + "\r\n\r\n");
         } catch (IOException e) {
             System.out.println("Something went wrong");
         }
