@@ -39,7 +39,7 @@ public class AddressBook {
             writer.write(detail.getFirstName() + "\r\n" + detail.getLastName() + "\r\n" + detail.getAddress() + "\r\n" + detail.getCity() +
                     "\r\n" + detail.getState() + "\r\n" + detail.getZip() + "\r\n" + detail.getPhoneNumber() + "\r\n" + detail.getEmail() + "\r\n\r\n");
         } catch (IOException e) {
-            System.out.println("Something went wrong");
+            System.out.println("Something went wrong" +e.getMessage());
         }
     }
     public void readPeopleFromFile(){
@@ -52,7 +52,7 @@ public class AddressBook {
                 reader.readLine();
             }
         } catch (IOException e) {
-            System.out.println("something went wrong");
+            System.out.println("something went wrong" +e.getMessage());
         }
     }
 }
