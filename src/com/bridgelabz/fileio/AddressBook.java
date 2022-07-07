@@ -31,7 +31,7 @@ public class AddressBook {
         Contacts list = new Contacts(fName, lName, address, city, state, zip, phoneNumber, email);
         addToFile(list);
         person.add(list);
-        System.out.println("Contact added is:" +person);
+        System.out.println("\nContact added is:" +person);
     }
 
     private void addToFile(Contacts detail){
@@ -46,9 +46,9 @@ public class AddressBook {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String name;
             while ((name = reader.readLine()) != null) {
-                Contacts person1 = new Contacts(name, reader.readLine(), reader.readLine(), reader.readLine(),
+                Contacts contactOne = new Contacts(name, reader.readLine(), reader.readLine(), reader.readLine(),
                         reader.readLine(), reader.readLine(), reader.readLine(), reader.readLine());
-                person.add(person1);
+                person.add(contactOne);
                 reader.readLine();
             }
         } catch (IOException e) {
